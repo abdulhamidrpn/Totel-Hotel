@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/custom_edittext_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <!-- Set the background color -->
+            <solid android:color="@color/background_button" />
+            <!-- Set the corner radius (optional) -->
+            <corners android:radius="@dimen/_16sdp" />
+        </shape>
+    </item>
+    <!-- You can add more items for other effects (e.g., a border) if desired -->
+</layer-list>

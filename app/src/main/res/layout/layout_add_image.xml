@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_add_image"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:layout_marginEnd="@dimen/_12sdp"
+    android:background="@drawable/background_curve_with_stroke_dotted"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/_12sdp">
+
+
+    <ImageButton
+        style="@style/icon_style"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:background="@drawable/background_curve_with_stroke_dotted"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/colorSubTitleText" />
+
+    <TextView
+        style="@style/titleText"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="Add Images" />
+
+    <TextView
+        style="@style/subTitleText"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="Browse Files from gallery" />
+</LinearLayout>

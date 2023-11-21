@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Everyone-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container"
+        android:layout_width="@dimen/_160sdp"
+        style="@style/thumbnail_style"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thumbnail_hotel_1" />
+
+
+            <TextView
+                style="@style/subTitleText"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:text="Everyone"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

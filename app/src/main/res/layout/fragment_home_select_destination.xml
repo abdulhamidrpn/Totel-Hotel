@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.SelectDestinationFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rpn.totel.ui.viewmodel.HomeViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar" />
+
+            <TextView
+                style="@style/headTitleText"
+                android:text="Select your destination" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp">
+
+                <EditText
+                    style="@style/editTextInput"
+                    android:layout_width="match_parent"
+                    android:drawableEnd="@drawable/search"
+                    android:drawableRight="@drawable/search"
+                    android:hint="Search your desination" />
+
+                <TextView
+                    style="@style/titleText"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:text="Popular Destinations" />
+
+                <include
+                    android:id="@+id/list_popular_destinations"
+                    layout="@layout/layout_recyclerview" />
+
+                <TextView
+                    style="@style/titleText"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:text="You may like" />
+
+                <include
+                    android:id="@+id/list_you_may_like"
+                    layout="@layout/layout_recyclerview" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_continue"
+                    style="@style/button_style"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:layout_marginBottom="@dimen/_28sdp"
+                    android:text="Continue" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

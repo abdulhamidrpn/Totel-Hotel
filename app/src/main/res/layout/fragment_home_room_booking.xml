@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.SelectDestinationFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rpn.totel.ui.viewmodel.HomeViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar" />
+
+            <TextView
+                style="@style/headTitleText"
+                android:text="Cerulean Tower  Tokyu Hotel" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_12sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/container"
+                    style="@style/card_container_style"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    app:contentPadding="@dimen/_18sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/titleText"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:fontFamily="@font/sf_pro_text_bold"
+                            android:text="18$/night"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:text="Select duration"
+                            android:textColor="@color/colorTitleText" />
+
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/style_dropdown"
+                            android:minHeight="@dimen/_26sdp"
+                            android:overlapAnchor="true"
+                            android:popupBackground="@color/colorBackground"
+                            android:spinnerMode="dropdown" />
+
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_gravity="end"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:text="See available time slots"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:text="Guests"
+                            android:textColor="@color/colorTitleText" />
+
+                        <Spinner
+                            android:id="@+id/spinner_guests"
+                            android:layout_width="@dimen/_180sdp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/style_dropdown"
+                            android:minHeight="@dimen/_26sdp"
+                            android:overlapAnchor="true"
+                            android:popupBackground="@color/colorBackground"
+                            android:spinnerMode="dropdown" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_send_proposal"
+                            style="@style/button_style"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginBottom="@dimen/_12sdp"
+                            android:text="Send Proposal" />
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:text="You won't be charged yet"
+                            android:textColor="@color/colorTitleText" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/subTitleText"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="$75 x 7 nights"
+                                android:textColor="@color/colorTitleText" />
+
+                            <TextView
+                                style="@style/subTitleText"
+                                android:layout_gravity="center"
+                                android:text="$525"
+                                android:textColor="@color/colorTitleText" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/subTitleText"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="Weekly discount"
+                                android:textColor="@color/colorTitleText" />
+
+                            <TextView
+                                style="@style/subTitleText"
+                                android:layout_gravity="center"
+                                android:text="-$25"
+                                android:textColor="@color/colorTitleText" />
+                        </LinearLayout>
+
+                        <View style="@style/Divider" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/subTitleText"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="Total"
+                                android:textColor="@color/colorTitleText" />
+
+                            <TextView
+                                style="@style/subTitleText"
+                                android:layout_gravity="center"
+                                android:text="$525"
+                                android:textColor="@color/colorTitleText" />
+                        </LinearLayout>
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_see_more_details"
+                            style="@style/button_style"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginBottom="@dimen/_12sdp"
+                            android:text="See more details" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_continue"
+                    style="@style/button_style"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_28sdp"
+                    android:text="Next" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

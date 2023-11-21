@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.SelectDestinationFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rpn.totel.ui.viewmodel.HomeViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar" />
+
+            <TextView
+                style="@style/headTitleText"
+                android:text="Give your availability" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_12sdp">
+
+
+                <TextView
+                    style="@style/subTitleText"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_12sdp"
+                    android:text="In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room."
+                    android:textColor="@color/colorTitleText" />
+
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_tags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToOutline="true"
+                        android:clipToPadding="true"
+                        android:paddingStart="@dimen/_16sdp"
+                        app:chipSpacing="@dimen/_8sdp"
+                        app:chipSpacingHorizontal="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_hour"
+                            style="@style/SelectionStyle"
+                            android:layout_width="wrap_content"
+                            android:text="Hour" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_day"
+                            style="@style/SelectionStyle"
+                            android:layout_width="wrap_content"
+                            android:text="Day" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </HorizontalScrollView>
+
+
+                <TextView
+                    style="@style/subTitleText"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:text="Check-In" />
+
+                <TextView
+                    android:id="@+id/tv_check_in"
+                    style="@style/subTitleText"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:background="@drawable/btn_ripple_circular"
+                    android:drawableEnd="@drawable/calendar_today"
+                    android:drawablePadding="@dimen/_16sdp"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:text="01/13/2023"
+                    android:textAlignment="center" />
+
+                <TextView
+                    style="@style/subTitleText"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:text="Check-Out" />
+
+                <TextView
+                    style="@style/semiTitleText"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:background="@drawable/btn_ripple_circular"
+                    android:drawableEnd="@drawable/calendar_today"
+                    android:drawablePadding="@dimen/_16sdp"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:text="01/13/2023"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_back"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_140sdp"
+                    android:text="Back"
+                    android:textColor="@color/colorTitleText"
+                    app:backgroundTint="@color/colorBackground2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_next"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_140sdp"
+                    android:text="Next" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

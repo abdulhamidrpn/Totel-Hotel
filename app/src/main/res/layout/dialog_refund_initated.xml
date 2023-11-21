@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_30sdp"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:contentPadding="@dimen/_18sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Add your content for the bottom sheet here -->
+
+            <LinearLayout
+                android:id="@+id/container_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/semiTitleText"
+                    android:layout_weight="1"
+                    android:text="Refund Intiated" />
+
+                <TextView
+                    style="@style/semiTitleText"
+                    android:text="$420" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="0dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                style="@style/subTitleText"
+                android:text="Order ID : 123ahr970b5i35" />
+
+            <TextView
+                style="@style/subTitleText"
+                android:text="Transaction ID : 123ahr970b5i35" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_12sdp"
+                android:src="@drawable/image_done" />
+
+            <TextView
+                style="@style/titleText"
+                android:layout_gravity="center"
+                android:text="Your Refund has been Initated!" />
+
+            <TextView
+                style="@style/semiSubTitleText"
+                android:layout_gravity="center"
+                android:text="Refund Cash to card" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp" />
+
+            <TextView
+                style="@style/semiSubTitleText"
+                android:layout_gravity="center"
+                android:text="By selecting the button below, I agree to the House Rules, Safety Disclosures, Social-distancing and other Covid-19-related guidelines, and  Guest Refund Policy. I also agree to pay the total amount shown, which includes Occupancy Taxes and Service Fees. Now collects, remits government-imposed Occupancy Taxes in this location."
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_close"
+                    style="@style/button_style"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:text="Close"
+                    android:textColor="@color/colorTitleText"
+                    android:theme="@style/Theme.Totel"
+                    app:backgroundTint="@color/background_button" />
+                />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_contact_us"
+                    style="@style/button_style"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:text="Contact us"
+                    android:textColor="@color/colorTitleTextInverse"
+                    android:theme="@style/Theme.Totel"
+                    app:backgroundTint="@color/colorPrimary" />
+                />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
+

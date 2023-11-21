@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+        <variable
+            name="viewmodel"
+            type="com.rpn.totel.ui.viewmodel.SingleChatViewModel" />
+    </data>
+
+    <LinearLayout style="@style/LinearVerticalMMView">
+
+        <include
+            android:id="@+id/view_chat_header"
+            layout="@layout/view_chat_toolbar"
+            bind:viewmodel="@{viewmodel}" />
+
+        <include
+            android:id="@+id/list"
+            layout="@layout/layout_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_voice"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="end|bottom"
+            android:visibility="gone"
+            bind:lottie_rawRes="@raw/lottie_voice" />
+
+        <include
+            android:id="@+id/view_chat_btm"
+            layout="@layout/view_chat_btm"
+            bind:viewmodel="@{viewmodel}" />
+    </LinearLayout>
+</layout>

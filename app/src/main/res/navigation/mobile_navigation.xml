@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.rpn.totel.ui.fragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_lookingForPartnerFragment"
+            app:destination="@id/lookingForPartnerTypeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.rpn.totel.ui.fragment.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_navigation_dashboard_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_spaceFragment"
+            app:destination="@id/spaceFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_businessFragment"
+            app:destination="@id/businessFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.rpn.totel.ui.fragment.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_confirmation"
+        android:name="com.rpn.totel.ui.fragment.ConfirmationFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.dashboard.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking" />
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.dashboard.InboxFragment"
+        android:label="InboxFragment"
+        tools:layout="@layout/fragment_inbox" />
+    <fragment
+        android:id="@+id/spaceFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.dashboard.SpaceFragment"
+        android:label="SpaceFragment"
+        tools:layout="@layout/fragment_space" />
+    <fragment
+        android:id="@+id/businessFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.dashboard.BusinessFragment"
+        android:label="BusinessFragment"
+        tools:layout="@layout/fragment_business" />
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.dashboard.business.ReviewsFragment"
+        android:label="ReviewsFragment"
+        tools:layout="@layout/layout_recyclerview" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.dashboard.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/lookingForPartnerTypeFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.LookingForPartnerTypeFragment"
+        android:label="LookingForPartnerTypeFragment"
+        tools:layout="@layout/fragment_home_looking_for_partner_type">
+        <action
+            android:id="@+id/action_lookingForPartnerTypeFragment_to_selectDestinationFragment"
+            app:destination="@id/selectDestinationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectDestinationFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.SelectDestinationFragment"
+        android:label="SelectDestinationFragment"
+        tools:layout="@layout/fragment_home_select_destination" />
+    <fragment
+        android:id="@+id/roomDetailsFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.RoomDetailsFragment"
+        android:label="RoomDetailsFragment"
+        tools:layout="@layout/fragment_home_room_details" />
+
+    <action
+        android:id="@+id/globalActionToNavigationHome"
+        app:destination="@id/navigation_home"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToNavigationConfirmation"
+        app:destination="@id/navigation_confirmation"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToNavigationNotifications"
+        app:destination="@id/navigation_notifications"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToDetailsBookedFragment"
+        app:destination="@id/detailsBookedFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToRoomDetailsFragment"
+        app:destination="@id/roomDetailsFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <action
+        android:id="@+id/globalActionToRoomBookingFragment"
+        app:destination="@id/roomBookingFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToRoomLocationFragment"
+        app:destination="@id/roomLocationFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToRoomReviewsFragment"
+        app:destination="@id/roomReviewsFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToSelectPartnerFragment"
+        app:destination="@id/selectPartnerFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToProfileWishlistFragment"
+        app:destination="@id/profileWishlistFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToWishlistFragment"
+        app:destination="@id/wishlistFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToDurationAlertFragment"
+        app:destination="@id/durationAlertFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToExtendTimeFragment"
+        app:destination="@id/extendTimeFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToProfileGuestFragment"
+        app:destination="@id/profileGuestFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToDetailsLookingForPartnerFragment"
+        app:destination="@id/lookingForPartnerFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/globalActionToLookingForPartnerPostFragment"
+        app:destination="@id/lookingForPartnerLocationFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+
+    <action
+        android:id="@+id/globalActionToFindLocationFragment"
+        app:destination="@id/findLocationFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/roomBookingFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.RoomBookingFragment"
+        android:label="RoomBookingFragment"
+        tools:layout="@layout/fragment_home_room_booking" />
+    <fragment
+        android:id="@+id/roomLocationFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.RoomLocationFragment"
+        android:label="RoomLocationFragment"
+        tools:layout="@layout/fragment_home_room_location" />
+    <fragment
+        android:id="@+id/roomReviewsFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.RoomReviewsFragment"
+        android:label="RoomReviewsFragment"
+        tools:layout="@layout/fragment_home_room_reviews" />
+    <fragment
+        android:id="@+id/selectPartnerFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.home.SelectPartnerFragment"
+        android:label="SelectPartnerFragment"
+        tools:layout="@layout/fragment_home_select_partner" />
+    <fragment
+        android:id="@+id/profileWishlistFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.ProfileWishlistFragment"
+        android:label="ProfileWishlistFragment"
+        tools:layout="@layout/fragment_profile_wishlist" />
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.WishlistFragment"
+        android:label="WishlistFragment"
+        tools:layout="@layout/fragment_wishlist" />
+    <fragment
+        android:id="@+id/extendTimeFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.ExtendTimeFragment"
+        android:label="ExtendTimeFragment"
+        tools:layout="@layout/fragment_extend_time" />
+    <fragment
+        android:id="@+id/durationAlertFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.DurationAlertFragment"
+        android:label="DurationAlertFragment"
+        tools:layout="@layout/fragment_duration_alert" />
+    <fragment
+        android:id="@+id/profileGuestFragment"
+        android:name="com.rpn.totel.ui.fragment.ProfileGuestFragment"
+        android:label="ProfileGuestFragment"
+        tools:layout="@layout/fragment_profile_guest" />
+    <fragment
+        android:id="@+id/detailsBookedFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.DetailsBookedFragment"
+        android:label="DetailsBookedFragment"
+        tools:layout="@layout/fragment_details_booked_hotel">
+        <action
+            android:id="@+id/action_detailsBookedFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.LookingForPartnerFragment"
+        android:label="LookingForPartnerFragment"
+        tools:layout="@layout/fragment_looking_for_partner">
+        <action
+            android:id="@+id/action_lookingForPartnerFragment_to_lookingForPartnerPostFragment"
+            app:destination="@id/lookingForPartnerLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerLocationFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerLocationFragment"
+        android:label="LookingForPartnerPostFragment"
+        tools:layout="@layout/fragment_looking_for_partner_location">
+        <action
+            android:id="@+id/action_lookingForPartnerLocationFragment_to_lookingForPartnerGuestNoFragment"
+            app:destination="@id/lookingForPartnerGuestNoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerGuestNoFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerGuestNoFragment"
+        android:label="LookingForPartnerGuestNoFragment"
+        tools:layout="@layout/fragment_looking_for_partner_guest_no">
+        <action
+            android:id="@+id/action_lookingForPartnerGuestNoFragment_to_lookingForPartnerInterestsFragment"
+            app:destination="@id/lookingForPartnerInterestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerInterestsFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerInterestsFragment"
+        android:label="LookingForPartnerInterestsFragment"
+        tools:layout="@layout/fragment_looking_for_partner_intersests">
+        <action
+            android:id="@+id/action_lookingForPartnerInterestsFragment_to_lookingForPartnerUploadImageFragment"
+            app:destination="@id/lookingForPartnerUploadImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerUploadImageFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerUploadImageFragment"
+        android:label="LookingForPartnerUploadImageFragment"
+        tools:layout="@layout/fragment_looking_for_partner_upload_image">
+        <action
+            android:id="@+id/action_lookingForPartnerUploadImageFragment_to_lookingForPartnerGiveTitleFragment"
+            app:destination="@id/lookingForPartnerGiveTitleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerGiveTitleFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerGiveTitleFragment"
+        android:label="LookingForPartnerGiveTitleFragment"
+        tools:layout="@layout/fragment_looking_for_partner_give_title">
+        <action
+            android:id="@+id/action_lookingForPartnerGiveTitleFragment_to_lookingForPartnerPricingLimitFragment"
+            app:destination="@id/lookingForPartnerPricingLimitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerPricingLimitFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerPricingLimitFragment"
+        android:label="LookingForPartnerPricingLimitFragment"
+        tools:layout="@layout/fragment_looking_for_partner_pricing_limit">
+        <action
+            android:id="@+id/action_lookingForPartnerPricingLimitFragment_to_lookingForPartnerAvailability"
+            app:destination="@id/lookingForPartnerAvailability" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/lookingForPartnerAvailability"
+        android:name="com.rpn.totel.ui.fragment.secondary.looking_for_partner.LookingForPartnerAvailability"
+        android:label="LookingForPartnerAvailability"
+        tools:layout="@layout/fragment_looking_for_partner_pricing_limit">
+        <action
+            android:id="@+id/action_lookingForPartnerAvailability_to_refundPaymentFragment"
+            app:destination="@id/refundPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/refundPaymentFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.RefundPaymentFragment"
+        android:label="RefundPaymentFragment"
+        tools:layout="@layout/fragment_refund_payment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.PaymentFragment"
+        android:label="PaymentFragment"
+        tools:layout="@layout/fragment_payment">
+        <action
+            android:id="@+id/action_paymentFragment_to_paymentStatusFragment"
+            app:destination="@id/paymentStatusFragment"
+            app:popUpTo="@id/paymentFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentStatusFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.payment.PaymentStatusFragment"
+        android:label="PaymentStatusFragment"
+        tools:layout="@layout/fragment_payment_status">
+        <action
+            android:id="@+id/action_paymentStatusFragment_to_bookingStatusFragment"
+            app:destination="@id/bookingStatusFragment"
+            app:popUpTo="@id/paymentStatusFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingStatusFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.booking.BookingStatusFragment"
+        android:label="BookingStatusFragment"
+        tools:layout="@layout/fragment_booking_status">
+        <action
+            android:id="@+id/action_bookingStatusFragment_to_bookingPaidDetailsFragment"
+            app:destination="@id/bookingPaidDetailsFragment"
+            app:popUpTo="@id/bookingStatusFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingPaidDetailsFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.booking.BookingPaidDetailsFragment"
+        android:label="BookingPaidDetailsFragment"
+        tools:layout="@layout/fragment_booking_paid_details">
+
+        <action
+            android:id="@+id/action_bookingPaidDetailsFragment_to_findLocationFragment"
+            app:destination="@id/findLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findLocationFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.FindLocationFragment"
+        android:label="FindLocationFragment"
+        tools:layout="@layout/fragment_find_location">
+
+        <action
+            android:id="@+id/action_findLocationFragment_to_bookingSuccessfulFragment"
+            app:destination="@id/bookingSuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingSuccessfulFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.booking.BookingSuccessfulFragment"
+        android:label="BookingSuccessfulFragment"
+        tools:layout="@layout/fragment_booking_successful" />
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.rpn.totel.ui.fragment.secondary.message.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat" />
+
+    <action
+        android:id="@+id/globalActionToChatFragment"
+        app:destination="@id/chatFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+</navigation>

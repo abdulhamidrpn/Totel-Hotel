@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Everyone-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container"
+        android:layout_height="@dimen/_200sdp"
+        style="@style/thumbnail_style"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_4sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thumbnail_everyone" />
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/subTitleText"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:text=""
+                android:textColor="@color/white" />
+
+            <ImageButton
+                android:id="@+id/btn_cancel"
+                style="@style/button_icon_style"
+                android:visibility="gone"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                app:srcCompat="@drawable/cross" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_circle_top"
+        android:backgroundTint="@color/colorBackground"
+        android:elevation="@dimen/_30sdp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_18sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:id="@+id/container_details"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:id="@+id/container_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp">
+
+
+                <ImageView
+                    style="@style/icon_style"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_close" />
+
+                <LinearLayout
+                    android:id="@+id/title_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/scroller"
+                        android:layout_width="25dp"
+                        android:layout_height="3dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:alpha="1"
+                        android:background="@color/colorSubTitleTextLite"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        style="@style/semiTitleText"
+                        android:text="Check In / Check Out" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btn_close"
+                    style="@style/icon_style"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/cancel" />
+            </LinearLayout>
+
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="14dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/exFourStartDateText"
+                    style="@style/subTitleText"
+                    android:layout_width="0dp"
+                    android:minLines="2"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/exFourHeaderDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Mon\n22 Apr" />
+
+                <View
+                    android:id="@+id/exFourHeaderDivider"
+                    android:layout_width="1.5dp"
+                    android:layout_height="0dp"
+                    android:background="#EAEAEA"
+                    android:rotation="180"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/exFourEndDateText"
+                    style="@style/subTitleText"
+                    android:layout_width="0dp"
+                    android:minLines="2"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/exFourHeaderDivider"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Thu\n9 May" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/legendLayout"
+                layout="@layout/calendar_day_legend_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+
+        <com.kizitonwose.calendar.view.CalendarView
+            android:id="@+id/exFourCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            app:cv_dayViewResource="@layout/example_4_calendar_day"
+            app:cv_monthHeaderResource="@layout/example_4_calendar_header"
+            app:cv_orientation="horizontal"
+            app:cv_scrollPaged="false"
+            app:layout_constraintBottom_toTopOf="@id/container_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_details" />
+
+        <FrameLayout
+            android:id="@+id/container_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorBackground"
+            android:elevation="@dimen/_10sdp"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exFourCalendar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/titleText"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="Time" />
+
+                    <TextView
+                        style="@style/textWithBackground"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:background="@drawable/background_round_edittext"
+                        android:text="09:41" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_tags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_round_edittext"
+                        android:clipToOutline="true"
+                        android:clipToPadding="true"
+                        app:chipSpacingHorizontal="0dp"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_male"
+                            style="@style/SelectionStyle"
+                            android:layout_width="wrap_content"
+                            android:text="AM" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_female"
+                            style="@style/SelectionStyle"
+                            android:layout_width="wrap_content"
+                            android:text="PM" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/exFourSaveButton"
+                        style="@style/button_style"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:text="Cancel"
+                        android:textColor="@color/colorTitleText"
+                        android:theme="@style/Theme.Totel"
+                        app:backgroundTint="@color/background_button" />
+                    />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_set"
+                        style="@style/button_style"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:text="@string/save"
+                        android:textColor="@color/colorTitleTextInverse"
+                        android:theme="@style/Theme.Totel"
+                        app:backgroundTint="@color/colorBackgroundInverse" />
+                    />
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

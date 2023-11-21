@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingTop="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_18sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- User Name -->
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:maxLines="1"
+                android:text="$100 earned in 2023"
+                android:textColor="@color/colorTitleText"
+                android:textSize="@dimen/_22ssp" />
+
+            <ImageView
+                style="@style/icon_style"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/btn_ripple_circular"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/filter"
+                app:tint="@color/white" />
+        </LinearLayout>
+
+        <!-- Edit Profile Button -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:maxLines="1"
+            android:text="All earnings adjustments included"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="normal" />
+
+        <com.straiberry.android.charts.view.LineChartView
+            android:id="@+id/linearChartViewOralHygiene"
+            style="@style/OralHygieneChart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="8dp"
+            android:layoutDirection="ltr"
+            app:chart_grid="vertical"
+            app:chart_gridEffect="dashed"
+            app:chart_gridStrokeWidth="1dp"
+            app:chart_labelsSize="8sp"
+            app:chart_labelsXColor="@color/linkWithoutButton"
+            app:chart_labelsYColor="@color/linkWithoutButton" />
+
+        <com.rpn.totel.customui.CircleColorView
+            android:id="@+id/used_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:labelColor="@color/green"
+            app:titleText="$100 Booking earnings"
+            app:titleTextColor="@color/colorTitleText"
+            app:titleTextSize="@dimen/_14ssp" />
+
+        <com.rpn.totel.customui.CircleColorView
+            android:id="@+id/free_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:labelColor="@color/black"
+            app:titleText="$0 Upcoming earnings"
+            app:titleTextColor="@color/colorTitleText"
+            app:titleTextSize="@dimen/_14ssp" />
+
+        <com.rpn.totel.customui.CircleColorView
+            android:id="@+id/reimbursements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:labelColor="@color/colorPrimary"
+            app:titleText="$0 Reimbursements"
+            app:titleTextColor="@color/colorTitleText"
+            app:titleTextSize="@dimen/_14ssp" />
+
+        <com.rpn.totel.customui.CircleColorView
+            android:id="@+id/missed_earnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:labelColor="@color/purple_200"
+            app:titleText="$0 Missed earnings"
+            app:titleTextColor="@color/colorTitleText"
+            app:titleTextSize="@dimen/_14ssp" />
+
+    </LinearLayout>
+
+</layout>

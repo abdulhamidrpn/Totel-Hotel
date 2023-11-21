@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container"
+        style="@style/thumbnail_style"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_4sdp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_partener"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thumbnail_partner" />
+
+
+            <View
+                android:id="@+id/image_foreground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!--Info Text container-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_12sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/titleText"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:text="Hotel Assenzio"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/titleText"
+                        android:text="25y"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/subTitleText"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:maxLines="2"
+                    android:text="$300 - 400$ / Month"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/subTitleText"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:maxLines="2"
+                    android:text="Available from - 27 Jan 2023"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/subTitleText"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:maxLines="2"
+                    android:text="Looking for 1-2 roommates for a place in Manchester city centre (wanting to move in around August time)."
+                    android:textColor="@color/colorSubTitleText"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageButton
+                        android:id="@+id/btn_decline"
+                        style="@style/icon_style"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:background="@drawable/btn_ripple_circular"
+                        android:backgroundTint="@color/red"
+                        android:elevation="@dimen/_6sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/cross"
+                        app:tint="@color/white" />
+
+                    <ImageButton
+                        android:id="@+id/btn_wishlist"
+                        style="@style/icon_style"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:background="@drawable/btn_ripple_circular"
+                        android:backgroundTint="@color/green"
+                        android:elevation="@dimen/_6sdp"
+                        android:padding="@dimen/_6sdp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_favorite_filled"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

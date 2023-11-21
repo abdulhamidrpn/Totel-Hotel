@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <!-- custom_radio_button.xml -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:selectableItemBackground"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp">
+
+        <!-- Icon at the left -->
+        <ImageView
+            android:id="@+id/iv_logo"
+            style="@style/icon_medium_style"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:padding="0dp"
+            android:src="@drawable/master_card"
+            app:tint="@color/transparent" />
+
+        <!-- Text in the middle -->
+        <TextView
+            android:id="@+id/tv_card_number"
+            style="@style/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_logo"
+            android:textSize="@dimen/_15ssp"
+            android:text="**** **** **** 1728" />
+
+        <!-- Option button at the end -->
+        <RadioButton
+            android:id="@+id/optionRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_logo"
+            android:layout_marginTop="@dimen/_4sdp" />
+
+    </RelativeLayout>
+
+</layout>

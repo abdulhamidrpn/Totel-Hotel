@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rpn.totel.ui.viewmodel.HomeViewModel" />
+    </data>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        style="@style/editTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/search"
+                        android:drawableLeft="@drawable/search" />
+
+                    <ImageView
+                        android:id="@+id/btn_demo"
+                        style="@style/icon_style"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/btn_ripple_circular"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/filter" />
+                </LinearLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:clipToOutline="true"
+                    android:clipToPadding="true"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    app:chipSpacing="@dimen/_8sdp"
+                    app:chipSpacingHorizontal="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_rented_rooms"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Rented Rooms" />
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_looking_for_partner"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Looking for Partner" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_already_booked"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Already Booked" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_already_booked2"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Ready for Booked" />
+                </com.google.android.material.chip.ChipGroup>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_button">
+
+                    <include
+                        android:id="@+id/list"
+                        layout="@layout/layout_recyclerview_home"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp" />
+
+                    <include
+                        android:id="@+id/enable_location"
+                        layout="@layout/layout_enable_location"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

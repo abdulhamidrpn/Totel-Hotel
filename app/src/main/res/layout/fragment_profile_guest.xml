@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.DashboardFragment">
+
+    <data>
+
+
+        <variable
+            name="viewModel"
+            type="com.rpn.totel.ui.viewmodel.DashboardViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_16sdp">
+                <!--Profile-->
+                <LinearLayout
+                    android:id="@+id/container_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp">
+
+                    <!-- Profile Image -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_profile"
+                        style="@style/profile_style" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp">
+
+                        <TextView
+                            android:id="@+id/tv_view_and_edit_profile"
+                            style="@style/titleText"
+                            android:autoSizeMaxTextSize="@dimen/_16ssp"
+                            android:autoSizeMinTextSize="@dimen/_10ssp"
+                            android:autoSizeTextType="uniform"
+                            android:drawableEnd="@drawable/status_verified"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="John Doe Bard totel" />
+                        <!-- User Name -->
+                        <TextView
+                            android:id="@+id/tv_address"
+                            style="@style/subTitleText"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Bristol, United Kingdom" />
+                    </LinearLayout>
+
+
+                    <ImageButton
+                        android:id="@+id/iv_menu"
+                        style="@style/icon_style"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="@dimen/_36sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_ripple_circular"
+                        android:padding="@dimen/_8sdp"
+                        android:scaleType="center"
+                        app:srcCompat="@drawable/ic_round_menu_24"
+                        app:tint="@color/colorSubTitleText" />
+                </LinearLayout>
+                <!--Details-->
+                <TextView
+                    style="@style/subTitleText"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:text="Hi there! I’m creative individual who loves to spend time outdoors and explore new places. I work as a graphic designer and enjoy spending my free time drawing and painting."
+                    android:textColor="@color/colorTitleText" />
+
+                <LinearLayout
+                    android:id="@+id/container_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:text="Occupation" />
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:text="Student"
+                            android:textColor="@color/colorTitleText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:weightSum="5">
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:text="Interests" />
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:text="@string/demo_text_interests"
+                            android:textColor="@color/colorTitleText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:weightSum="5">
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:text="Language" />
+
+
+                        <TextView
+                            style="@style/subTitleText"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:text="English, Bengali"
+                            android:textColor="@color/colorTitleText" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/subTitleText"
+                        android:paddingStart="@dimen/_16sdp"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingEnd="@dimen/_16sdp"
+                        android:text="MEMBER SINCE DEC 4, 2020" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_show_more_less"
+                    style="@style/subTitleText"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:text="Show less"
+                    android:textColor="@color/colorPrimary" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_tags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:clipToOutline="true"
+                        android:clipToPadding="true"
+                        android:paddingStart="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        app:chipSpacing="@dimen/_8sdp"
+                        app:chipSpacingHorizontal="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_already_booked"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Already Booked" />
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_looking_for_partner"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Looking for Partner" />
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_reviews"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Reviews" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_wishlist"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Wishlist" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_draft"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Draft" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                </HorizontalScrollView>
+
+                <include
+
+                    android:id="@+id/list"
+                    layout="@layout/layout_recyclerview_home"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingEnd="@dimen/_16sdp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_46sdp"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_add"
+            android:tint="@color/white" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

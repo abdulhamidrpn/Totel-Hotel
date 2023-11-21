@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.rpn.totel.ui.viewmodel.SingleChatViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        tools:ignore="ContentDescription">
+
+        <LinearLayout style="@style/LinearVerticalMWView">
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/iv_add"
+                    style="@style/button_icon_style"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:elevation="0dp"
+                    android:padding="@dimen/_8sdp"
+                    app:srcCompat="@drawable/ic_add"
+                    app:tint="@color/colorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_round_edittext"
+                    android:elevation="0dp">
+
+                    <com.rpn.totel.views.CustomEditText
+                        android:id="@+id/edt_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="Type something"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLines="4"
+                        android:paddingStart="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingEnd="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:textColor="@color/colorTitleText"
+                        android:textColorHint="@color/colorSubTitleText"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/iv_record"
+                    style="@style/button_icon_style"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:elevation="0dp"
+                    android:padding="@dimen/_8sdp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/file_minus"
+                    app:tint="@color/colorPrimary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_send"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="0dp"
+            android:visibility="gone"
+            app:lottie_colorFilter="@color/colorPrimary"
+            app:lottie_rawRes="@raw/lottie_send" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
