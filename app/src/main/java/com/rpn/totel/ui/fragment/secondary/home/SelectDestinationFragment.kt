@@ -65,13 +65,13 @@ class SelectDestinationFragment : Fragment() {
 
     fun init() {
 
-        rvAdapterPopularDestination?.updateDataSet(Constants.demoItemList)
+        rvAdapterPopularDestination?.updateDataSet(Constants.demoItemList.shuffled())
         binding.listPopularDestinations.list.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = rvAdapterPopularDestination
         }
 
-        rvAdapterYouMayLike?.updateDataSet(Constants.demoItemList)
+        rvAdapterYouMayLike?.updateDataSet(Constants.demoItemList.shuffled())
         binding.listYouMayLike.list.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = rvAdapterYouMayLike

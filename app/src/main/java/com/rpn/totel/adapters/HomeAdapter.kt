@@ -75,7 +75,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         fun init() {
             binding as ItemHomeBinding
             val adapter = ImageAdapter()
-            adapter.updateDataSet(Constants.demoItemList)
+            adapter.updateDataSet(Constants.demoItemList.shuffled())
             adapter.itemClickListener = object : ItemClickListenerSingle<Item> {
                 override fun onItemClick(view: View, position: Int, item: Item) {
 

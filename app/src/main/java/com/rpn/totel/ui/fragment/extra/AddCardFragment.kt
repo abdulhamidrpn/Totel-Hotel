@@ -72,7 +72,7 @@ class AddCardFragment : BottomSheetDialogFragment() {
 
             }
         }
-        rvAdapter?.updateDataSet(Constants.demoItemList)
+        rvAdapter?.updateDataSet(Constants.demoItemList.shuffled())
         binding.list.list.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

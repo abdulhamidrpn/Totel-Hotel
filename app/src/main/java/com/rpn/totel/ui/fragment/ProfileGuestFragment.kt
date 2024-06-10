@@ -77,7 +77,7 @@ class ProfileGuestFragment : BaseFragment() {
                 bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
             }
         }
-        rvAdapter?.updateDataSet(Constants.demoItemList)
+        rvAdapter?.updateDataSet(Constants.demoItemList.shuffled())
         binding.list.list.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -128,7 +128,7 @@ class ProfileGuestFragment : BaseFragment() {
                 bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
             }
         }
-        rvAdapter?.updateDataSet(Constants.demoProfileList)
+        rvAdapter?.updateDataSet(Constants.demoProfileList.shuffled())
         binding.list.list.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

@@ -71,7 +71,7 @@ class PartnerAdapter : RecyclerView.Adapter<PartnerAdapter.ViewHolder>() {
         fun init() {
             binding as ItemPartnerBinding
             val adapter = ImageAdapter()
-            adapter.updateDataSet(Constants.demoProfileList)
+            adapter.updateDataSet(Constants.demoProfileList.shuffled())
             adapter.itemClickListener = object : ItemClickListenerSingle<Item> {
                 override fun onItemClick(view: View, position: Int, item: Item) {
 

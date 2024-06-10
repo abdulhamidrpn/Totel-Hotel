@@ -63,7 +63,7 @@ class RoomDetailsFragment : Fragment() {
 
     fun init() {
 
-        rvAdapterYouMayLike?.updateDataSet(Constants.demoItemList)
+        rvAdapterYouMayLike?.updateDataSet(Constants.demoItemList.shuffled())
         binding.listRoom.list.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

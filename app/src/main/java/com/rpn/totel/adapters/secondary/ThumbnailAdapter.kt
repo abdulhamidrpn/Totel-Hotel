@@ -10,9 +10,7 @@ import com.rpn.totel.databinding.ItemThumbnailBinding
 import com.rpn.totel.databinding.ItemThumbnailLargeBinding
 import com.rpn.totel.databinding.ItemThumbnailSmallBinding
 import com.rpn.totel.extensions.inflateWithBinding
-import com.rpn.totel.model.Booked
 import com.rpn.totel.model.Item
-import com.rpn.totel.utils.Constants
 import com.rpn.totel.utils.loadImage
 
 
@@ -76,7 +74,7 @@ class ThumbnailAdapter(val viewType: Int) : RecyclerView.Adapter<ThumbnailAdapte
             holder.bind(getItem(position))
 
         } else if (viewType == THUMBNAIL_TYPE_UPLOAD_IMAGE) {
-            holder.bindUploadImage(getItem(position))
+            holder.bindUploadImageLarge(getItem(position))
         } else {
             holder.bind(getItem(position))
 
@@ -90,20 +88,34 @@ class ThumbnailAdapter(val viewType: Int) : RecyclerView.Adapter<ThumbnailAdapte
     inner class ViewHolder(private val binding: ViewDataBinding, viewType: Int) :
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
-        fun bind(Booked: Item) {
+        fun bind(item: Item) {
             if (viewType == THUMBNAIL_TYPE_SMALL) {
                 binding as ItemThumbnailSmallBinding
+                bindUploadImageSmall(item)
             } else if (viewType == THUMBNAIL_TYPE_LARGE) {
                 binding as ItemThumbnailLargeBinding
+                bindUploadImageLarge(item)
             } else {
                 binding as ItemThumbnailBinding
+                bindUploadImageNormal(item)
             }
         }
 
-        fun bindUploadImage(item: Item) {
+        fun bindUploadImageNormal(item: Item) {
+            binding as ItemThumbnailBinding
+            binding.tvTitle.visibility = View.GONE
+            binding.btnCancel.visibility = View.GONE
+            binding.root.context.loadImage(binding.ivThumbnail, drawableResId = item.icon)
+        }
+        fun bindUploadImageLarge(item: Item) {
             binding as ItemThumbnailLargeBinding
             binding.tvTitle.visibility = View.GONE
-            binding.btnCancel.visibility = View.VISIBLE
+            binding.btnCancel.visibility = View.GONE
+            binding.root.context.loadImage(binding.ivThumbnail, drawableResId = item.icon)
+        }
+        fun bindUploadImageSmall(item: Item) {
+            binding as ItemThumbnailSmallBinding
+            binding.tvTitle.visibility = View.GONE
             binding.root.context.loadImage(binding.ivThumbnail, drawableResId = item.icon)
         }
 

@@ -71,7 +71,7 @@ class AlreadyBookedAdapter : RecyclerView.Adapter<AlreadyBookedAdapter.ViewHolde
         fun init() {
             binding as ItemAlreadyBookedBinding
             val adapter = ImageAdapter()
-            adapter.updateDataSet(Constants.demoItemList)
+            adapter.updateDataSet(Constants.demoItemList.shuffled())
             adapter.itemClickListener = object : ItemClickListenerSingle<Item> {
                 override fun onItemClick(view: View, position: Int, item: Item) {
 
